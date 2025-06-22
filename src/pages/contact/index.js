@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -7,6 +8,7 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
 
 export const ContactUs = () => {
+  const { t } = useTranslation();
   const [formData, setFormdata] = useState({
     email: "",
     name: "",
@@ -22,8 +24,8 @@ export const ContactUs = () => {
     setFormdata({ loading: true });
 
     const templateParams = {
-      from_name: formData.email,
-      user_name: formData.name,
+      from_name: formData.name,
+      from_email: formData.email,
       to_name: contactConfig.YOUR_EMAIL,
       message: formData.message,
     };
@@ -40,7 +42,7 @@ export const ContactUs = () => {
           console.log(result.text);
           setFormdata({
             loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your messege",
+            alertmessage: t("SUCCESS! Thank you for your message"),
             variant: "success",
             show: true,
           });
@@ -93,7 +95,7 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
+            <h3 className="color_sec py-4">{t("Get in touch")}</h3>
             <address>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
@@ -119,7 +121,7 @@ export const ContactUs = () => {
                     className="form-control"
                     id="name"
                     name="name"
-                    placeholder="Name"
+                    placeholder={t("Name")}
                     value={formData.name || ""}
                     type="text"
                     required
@@ -131,7 +133,7 @@ export const ContactUs = () => {
                     className="form-control rounded-0"
                     id="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder={t("Email")}
                     type="email"
                     value={formData.email || ""}
                     required
@@ -143,7 +145,7 @@ export const ContactUs = () => {
                 className="form-control rounded-0"
                 id="message"
                 name="message"
-                placeholder="Message"
+                placeholder={t("Message")}
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
@@ -153,7 +155,7 @@ export const ContactUs = () => {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn" type="submit">
-                    {formData.loading ? "Sending..." : "Send"}
+                    {formData.loading ? t("Sending...") : t("Send")}
                   </button>
                 </Col>
               </Row>

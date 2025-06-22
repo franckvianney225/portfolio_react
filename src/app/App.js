@@ -4,11 +4,13 @@ import {
   BrowserRouter as Router,
   useLocation,
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
-import AnimatedCursor  from "../hooks/AnimatedCursor";
+import AnimatedCursor from "../hooks/AnimatedCursor";
 import "./App.css";
+import "../styles/CursorEffects.css";
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
@@ -33,8 +35,10 @@ export default function App() {
         />
       </div>
       <ScrollToTop>
-        <Headermain />
-        <AppRoutes />
+        <AnimatePresence mode="wait">
+          <Headermain />
+          <AppRoutes />
+        </AnimatePresence>
       </ScrollToTop>
     </Router>
   );

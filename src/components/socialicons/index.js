@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 import "./style.css";
 import {
   FaGithub,
@@ -28,6 +29,7 @@ const ICON_MAPPING = {
 };
 
 export const Socialicons = (params) => {
+  const { t } = useTranslation();
   return (
     <div className="stick_follow_icon">
       <ul>
@@ -42,7 +44,7 @@ export const Socialicons = (params) => {
           );
         })}
       </ul>
-      <p>Follow Me</p>
+      <p>{t("Follow Me")}</p>
     </div>
   );
 };

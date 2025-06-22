@@ -94,9 +94,9 @@ function CursorCore({
     outerAlpha = 0.3,
     innerSize = 8,
     outerSize = 8,
-    outerScale = 6,
+    outerScale = 8,
     innerScale = 0.6,
-    trailingSpeed = 8,
+    trailingSpeed = 5,
     clickables = [
       'a',
       'input[type="text"]',
@@ -108,7 +108,8 @@ function CursorCore({
       'select',
       'textarea',
       'button',
-      '.link'
+      '.link',
+      '.zoom-text'
     ]
   }) {
     const cursorOuterRef = useRef()
