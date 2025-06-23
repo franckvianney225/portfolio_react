@@ -94,11 +94,16 @@ const dataportfolio = [{
         description: "Formulaire d'enregistrement des panelistes de Ivoire Tech Forum",
         link: "https://github.com/franckvianney225/ivoir_tech_form",
     },
-    // {
-    //     img: "https://picsum.photos/400/800/?grayscale",
-    //     description: "The wisdom of life consists in the elimination of non-essentials.",
-    //     link: "#",
-    // },
+    {
+        img: "/projets/cnia/cnia.png",
+        description: "Site web Fullstack pour la conference nationale de l'intelligence artificielle",
+        link: "https://github.com/franckvianney225/portfolio_react",
+    },
+    {
+        img: "/projets/count_down/count_down.png",
+        description: "Site web de compte à rebours pour tout type de conferences ou d'évènements",
+        link: "https://github.com/franckvianney225/count_down",
+    },
     // {
     //     img: "https://picsum.photos/400/?grayscale",
     //     description: "The wisdom of life consists in the elimination of non-essentials.",
