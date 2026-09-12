@@ -12,7 +12,7 @@ const introdata = {
         third: "intro_animated_third",
     },
     description: "intro_description",
-    your_img_url: "/photo.png",
+    your_img_url: "/photo.webp",
 };
 
 const dataabout = {
@@ -91,22 +91,23 @@ const services = [{
 
 const dataportfolio = [
     {
-        img: "/projets/kontenental/kontinental.png",
+        img: "/projets/kontenental/kontinental.webp",
         description: "Site web d'une entreprise dans le domaine de l'audit avec backend",
         link: "https://github.com/franckvianney225/kontinental-audit-react",
     },
     {
-        img: "/projets/ivoir_tech_form/ivoiretech_form.png",
+        img: "/projets/ivoir_tech_form/ivoiretech_form.webp",
         description: "Formulaire d'enregistrement des panelistes de Ivoire Tech Forum",
         link: "https://github.com/franckvianney225/ivoir_tech_form",
     },
     {
-        img: "/projets/cnia/cnia.png",
+        img: "/projets/cnia/cnia.webp",
         description: "Site web Fullstack pour la conference nationale de l'intelligence artificielle",
+        // TODO: lien à corriger — pointe actuellement vers le repo de ce portfolio, pas vers le projet CNIA
         link: "https://github.com/franckvianney225/portfolio_react",
     },
     {
-        img: "/projets/count_down/count_down.png",
+        img: "/projets/count_down/count_down.webp",
         description: "Site web de compte à rebours pour tout type de conferences ou d'évènements",
         link: "https://github.com/franckvianney225/count_down",
     },
