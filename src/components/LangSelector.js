@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import '../styles/LangSelector.css';
 
