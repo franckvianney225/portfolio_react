@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import LangSelector from "../../components/LangSelector";
 import { useTranslation } from "../../hooks/useTranslation";
 import Typewriter from "typewriter-effect";
-import { introdata, meta } from "../../content_option";
+import { introdata, meta, skills, dataportfolio } from "../../content_option";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
@@ -34,6 +34,7 @@ export const Home = () => {
                 <h2 className="mb-1x zoom-text">{t(introdata.title)}</h2>
                 <h1 className="fluidz-48 mb-1x">
                   <Typewriter
+                    key={refreshKey}
                     options={{
                       strings: [
                         t(introdata.animated.first),
@@ -67,6 +68,34 @@ export const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="home-stack-preview">
+          <h3 className="section-label">{t("Skills")}</h3>
+          <div className="stack-chips">
+            {skills.map((s, i) => (
+              <span className="chip" key={i}>
+                {s.name}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="home-projects-preview">
+          <div className="d-flex justify-content-between align-items-end mb-4">
+            <h3 className="section-label mb-0">{t("Featured Projects")}</h3>
+            <Link to="/portfolio" className="view-all-link">
+              {t("View All Projects")}
+            </Link>
+          </div>
+          <div className="projects-grid">
+            {dataportfolio.slice(0, 3).map((p, i) => (
+              <Link to="/portfolio" key={i} className="project-card">
+                <img src={p.img} alt={p.description} />
+                <p>{p.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
