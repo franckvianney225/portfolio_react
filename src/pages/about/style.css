@@ -2,6 +2,13 @@
     margin-bottom: calc(3rem + 5.128vw)
 }
 
+.table {
+    /* Bootstrap defaults these to a hard-coded white background,
+       which left dark-mode rows unreadable (white text on white bg). */
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text-color);
+}
+
 .table td,
 .table th {
     color: var(--text-color);
@@ -19,9 +26,9 @@
 }
 
 .progress {
-    height: 5px;
-    background: var(--secondary);
-    border-radius: 0;
+    height: 6px;
+    background: rgba(128, 128, 128, 0.25);
+    border-radius: 3px;
     box-shadow: none;
     margin-bottom: 30px;
     overflow: visible;
@@ -29,10 +36,11 @@
 
 .progress .progress-bar {
     position: relative;
-    background: var(--text-color);
-    animation: animate-positive 2s;
+    background: var(--primary-accent);
+    border-radius: 3px;
+    animation: animate-positive 1.4s ease-out;
     overflow: visible;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .progress .progress-value {
