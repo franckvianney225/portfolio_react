@@ -97,6 +97,7 @@ const dataportfolio = [
         category: "web",
         img: "/projets/kontenental/kontinental.webp",
         description: "Site web d'une entreprise dans le domaine de l'audit avec backend",
+        stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
         link: "https://github.com/franckvianney225/kontinental-audit-react",
     },
     {
@@ -104,6 +105,7 @@ const dataportfolio = [
         category: "web",
         img: "/projets/ivoir_tech_form/ivoiretech_form.webp",
         description: "Formulaire d'enregistrement des panelistes de Ivoire Tech Forum",
+        stack: ["React", "Vite", "Node.js", "SQLite"],
         link: "https://github.com/franckvianney225/ivoir_tech_form",
     },
     {
@@ -111,12 +113,14 @@ const dataportfolio = [
         category: "web",
         img: "/projets/cnia/cnia.webp",
         description: "Site web Fullstack pour la conference nationale de l'intelligence artificielle",
+        stack: ["React", "Vite", "Node.js", "Express", "MySQL"],
         link: "https://github.com/franckvianney225/cnia_2025",
     },
     {
         title: "Compte à Rebours Événementiel",
         category: "web",
         img: "/projets/count_down/count_down.webp",
+        stack: ["React", "Vite", "Node.js", "Socket.io", "SQLite"],
         description: "Site web de compte à rebours pour tout type de conferences ou d'évènements",
         link: "https://github.com/franckvianney225/count_down",
     },
