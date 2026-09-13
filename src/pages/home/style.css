@@ -302,14 +302,16 @@ section {
     color: var(--text-color);
 }
 
-.project-card img {
-    width: 100%;
-    display: block;
+.project-card h4 {
+    margin: 0;
+    padding: 16px 16px 0;
+    font-family: Marcellus;
+    font-size: 1.05rem;
 }
 
 .project-card p {
     margin: 0;
-    padding: 14px 16px;
+    padding: 8px 16px 16px;
     font-size: 0.9rem;
     line-height: 1.4;
 }

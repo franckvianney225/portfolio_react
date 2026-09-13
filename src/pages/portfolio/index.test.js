@@ -11,7 +11,7 @@ test("renders every project with a non-empty image description", () => {
   expect(screen.getAllByText(/view project/i)).toHaveLength(withLink);
   expect(screen.getAllByText("Projet privé")).toHaveLength(withoutLink);
 
-  const images = screen.getAllByRole("img");
+  const images = screen.queryAllByRole("img");
   expect(images).toHaveLength(dataportfolio.filter((p) => p.img).length);
   images.forEach((img) => {
     expect(img.getAttribute("alt")).not.toBe("");

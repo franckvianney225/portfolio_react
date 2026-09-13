@@ -90,9 +90,9 @@ export const Home = () => {
             </Link>
           </div>
           <div className="projects-grid">
-            {dataportfolio.slice(0, 3).map((p, i) => (
-              <Link to="/portfolio" key={i} className="project-card">
-                <img src={p.img} alt={p.description} />
+            {dataportfolio.slice(0, 3).map((p) => (
+              <Link to="/portfolio" key={p.title} className="project-card">
+                <h4>{p.title}</h4>
                 <p>{p.description}</p>
               </Link>
             ))}
