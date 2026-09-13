@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
@@ -35,10 +34,8 @@ export default function App() {
         />
       </div>
       <ScrollToTop>
-        <AnimatePresence mode="wait">
-          <Headermain />
-          <AppRoutes />
-        </AnimatePresence>
+        <Headermain />
+        <AppRoutes />
       </ScrollToTop>
     </Router>
   );
