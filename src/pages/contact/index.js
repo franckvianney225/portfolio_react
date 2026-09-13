@@ -21,7 +21,7 @@ export const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setFormdata((prev) => ({ ...prev, loading: true }));
 
     const templateParams = {
       from_name: formData.name,
@@ -40,20 +40,26 @@ export const ContactUs = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setFormdata({
+          setFormdata((prev) => ({
+            ...prev,
+            name: "",
+            email: "",
+            message: "",
             loading: false,
             alertmessage: t("SUCCESS! Thank you for your message"),
             variant: "success",
             show: true,
-          });
+          }));
         },
         (error) => {
           console.log(error.text);
-          setFormdata({
+          setFormdata((prev) => ({
+            ...prev,
+            loading: false,
             alertmessage: `Faild to send!,${error.text}`,
             variant: "danger",
             show: true,
-          });
+          }));
           document.getElementsByClassName("co_alert")[0].scrollIntoView();
         }
       );
@@ -76,7 +82,7 @@ export const ContactUs = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
+            <h1 className="display-4 mb-4">{t("Contact Me")}</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
@@ -88,7 +94,7 @@ export const ContactUs = () => {
               className={`rounded-0 co_alert ${
                 formData.show ? "d-block" : "d-none"
               }`}
-              onClose={() => setFormdata({ show: false })}
+              onClose={() => setFormdata((prev) => ({ ...prev, show: false }))}
               dismissible
             >
               <p className="my-0">{formData.alertmessage}</p>
@@ -147,7 +153,7 @@ export const ContactUs = () => {
                 name="message"
                 placeholder={t("Message")}
                 rows="5"
-                value={formData.message}
+                value={formData.message || ""}
                 onChange={handleChange}
                 required
               ></textarea>
